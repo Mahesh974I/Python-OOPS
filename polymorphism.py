@@ -1,3 +1,11 @@
+"""
+Polymorphism is nothing but oneobject can be used in many forms. We can achieve it by using
+method overridding.
+
+Method overridding:  It is nothing but the methods with the same name and also with the same parameters
+
+"""
+
 class Cat:
     def __init__(self, name, age):
         self.name = name
@@ -29,7 +37,10 @@ for animal in (cat1, dog1):
     print(animal.info())
     print(animal.make_sound())
 
-
+"""
+The info and the make_sound methods are same in both the classes. In the above example we achieved polymorphism
+with the help of method overloading 
+"""
 
 
 

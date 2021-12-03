@@ -1,6 +1,15 @@
+
+"""
+we can achieve encapsulation with the help of protected and private variables
+privated variables are recognised by double underscore whereas protected variables will be identified as single underscore.
+
+"""
+
 class car:
 
     def __init__(self, name, mileage):
+        ## we are declaring name as protected variable
+        ## we can identify the protected variable with "UnderScore"  
         self._name = name                #protected variable
         self.mileage = mileage 
 

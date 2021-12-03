@@ -1,81 +1,71 @@
+"""
+Inheritance is nothing but the acquiring the properities of the parent classes.
+Below is the example for implementing inheritance
+"""
 
-# class Person(object):
+## creating parent class person
+class Person(object):
       
-#     def __init__(self, name,age):
-#         self.name = name
-#         self.age = age
+    def __init__(self, name,age):
+        self.name = name
+        self.age = age
+    ## creating methods for the parent class
+    def getName(self):
+        return self.name
 
-#     def getName(self):
-#         return self.name
+    def getage(self):
+        return self.age
+  
+    def isEmployee(self):
+        return False
 
-#     def getage(self):
-#         return self.age
-  
-#     def isEmployee(self):
-#         return False
-  
-# class Employee(Person):
-#     def __init__(self, name, age,salary):
-#         super().__init__(name, age)
-#         self.salary = salary
+## Creating child class Employee which acquires the properties of person class
+class Employee(Person):
+    def __init__(self, name, age,salary):
+        ## using super keyword initialising the init variables of parent class
+        super().__init__(name, age)
+        self.salary = salary
 
    
-#     def isEmployee(self):
-#         return True
+    def isEmployee(self):
+        return True
 
-#     def getAge(self):
-#         return self.age
 
-#     def getsalary(self):
-#         return self.salary
+    def getsalary(self):
+        return self.salary
 
 
 
-# emp = Person("mahesh",23)  
-# print(emp.getName(), emp.isEmployee(), emp.getage())
+
   
-# emp = Employee("raju",23,10000)
-# print(emp.getName(), emp.isEmployee(),emp.getsalary())
+emp = Employee("raju",25,1000000)
+print('employee name is ',emp.getName(), 'and his age is ',emp.getage(),'salary is',emp.getsalary())
 
-###
-class Employee:
-    def __init__(self, id, name):
-        self.id = id
+### Another Example for inheritance
+
+class Car:
+    def __init__(self,name,model,price):
         self.name = name
+        self.model = model
+        self.price = price
+
+    def description(self,speed):
+        self.speed = speed
+        return f'Our {self.name} {self.model} will go max at a apeed of {self.speed}'
+
+class Name(Car):
+    def __init__(self, name, model, price,mailage,horsepower):
+        super().__init__(name, model, price)
+        self.milage = mailage
+        self.horsepower = horsepower
+    def carmilage(self):
+        return self.milage
+    def hp(self):
+        return self.horsepower
+# a = Car('BMW','i20',2000000)
+b = Name('BMW','i20',2000000,15,720)
+print(b.description(399),'with horsepower of',b.hp(),'and with milage of',b.carmilage())
 
 
-# class PayrollSystem:
-#     def calculate_payroll(self, employees):
-#         for employee in employees:
-#             print(f'Payroll for: {employee.id} - {employee.name}')
-#             print(f'- Check amount: {employee.calculate_payroll()}')
-#             print('')
 
-class SalaryEmployee(Employee):
-    def __init__(self, id, name, weekly_salary):
-        super().__init__(id, name)
-        self.weekly_salary = weekly_salary
-
-    def calculate_payroll(self):
-        return self.weekly_salary
-
-a = Employee(123,'mahesh')
-
-class HourlyEmployee(Employee):
-    def __init__(self, id, name, hours_worked, hour_rate):
-        super().__init__(id, name)
-        self.hours_worked = hours_worked
-        self.hour_rate = hour_rate
-
-    def calculate_payroll(self):
-        return self.hours_worked * self.hour_rate
-
-
-class CommissionEmployee(SalaryEmployee):
-    def __init__(self, id, name, weekly_salary, commission):
-        super().__init__(id, name, weekly_salary)
-        self.commission = commission
-
-    def calculate_payroll(self):
-        fixed = super().calculate_payroll()
-        return fixed + self.commission
+  

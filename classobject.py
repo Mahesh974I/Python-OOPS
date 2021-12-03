@@ -1,15 +1,26 @@
+### importing os and sys modules to know the
+"""
+class is nothing but a Collection of objects. simply we can say class is a blue print or template or design 
 
+and the objects are the instances of the class and every thng in the python is reffered as an object.
+
+"""
+
+### creating the class dog
 class Dog:
-    def __init__(self,name,age):
+    ## Initializing the variables
+    def __init__(self,name,age):   
         self.name = name
         self.age = age
-
-    def description(self):
+    ### creatingdescription method of class Dog
+    def description(self):        
         return f'{self.name} is {self.age} years old'
 
     def breed(self,bname):
         self.bname = bname
         return f'{self.name} belongs to {self.bname}'
+
+## Assigning the variables to the dog class
 
 d = Dog('Tommy',9)
 print(d.description())
@@ -18,6 +29,8 @@ print(b)
 
 
 ### Example
+
+## Creating another class called cab
 
 class Cab:
     
@@ -37,7 +50,7 @@ class Cab:
         
        
 
-
+### Initialising and Testing
 
 firstcab  = Cab("Ramesh", 80, ['Delhi', 'Noida'], 2200, 4)
 secondcab = Cab("Suresh", 60, ['Gurgaon', 'Noida'], 1500, 1)
@@ -50,7 +63,9 @@ print(secondcab.rateperkm())
 print(thirdcab.rateperkm())
 
 
-### 
+
+
+### code for checking prime number, even number, and pallindrome using Object oriented way 
 
 class Check:
     
@@ -115,3 +130,4 @@ if __name__ == '__main__':
     num = 586
     pallindrome = Check(num)
     print(pallindrome.pallindrome())
+
